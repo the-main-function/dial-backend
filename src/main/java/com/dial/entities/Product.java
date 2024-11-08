@@ -17,9 +17,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Integer productId;
     String name;
-    @OneToOne
-    @JoinColumn(name="stock_id")
-    Stock stock;
+    Integer stock = 0;
     @OneToMany(mappedBy = "product")
     @JsonIgnore
     List<Arrival> arrivalList;

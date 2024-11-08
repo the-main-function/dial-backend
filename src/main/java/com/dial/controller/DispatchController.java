@@ -21,6 +21,7 @@ public class DispatchController {
 
     @PostMapping("/dispatch")
     public ResponseEntity<Dispatch> addDispatch(@RequestBody DispatchDto dispatchDto){
+
         return new ResponseEntity<>(dispatchService.createDispatch(dispatchDto), HttpStatus.CREATED);
     }
 }

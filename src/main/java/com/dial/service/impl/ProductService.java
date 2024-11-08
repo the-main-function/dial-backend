@@ -6,6 +6,8 @@ import com.dial.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ProductService implements IProductService {
     private final ProductRepository productRepository;
@@ -20,5 +22,8 @@ public class ProductService implements IProductService {
 
     public Product fetchProduct(Integer productId){
         return productRepository.findById(productId).orElseThrow(()-> new RuntimeException());
+    }
+    public List<Product> fetchAllProducts(){
+        return productRepository.findAll();
     }
 }
